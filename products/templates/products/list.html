@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block title %} {{ block.super }} Listagem {% endblock title %} {% block content%}
+<div class="row">
+    <div class="col-md-9">
+        <h1>Lista de Produtos</h1>
+    </div>
+    <div class="col-md-3">
+        <a class="btn btn-primary btn-block" href="{% url 'products:create' %}"><i class="fa fa-plus-circle"></i> Adicionar Produto</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="table-active">
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço(R$)</th>
+                <th>Categoria</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products%}
+            <tr>
+                <td>{{ product.name | capfirst }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.category }}</td>
+                <td align="center" width="100px">
+                    <a href="{% url 'products:update' product.pk %}">
+                        <i class="fa fa-edit" title="Editar"></i>
+                    </a>
+                    &nbsp;<span style="color: blue;">|</span> &nbsp;
+                    <a href="{% url 'products:delete' product.pk %}">
+                        <i class="fa fa-trash" title="Excluir"></i>
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">
+                    Não existem itens a serem exibidos.
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content%}
