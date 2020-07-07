@@ -127,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # APPEND_SLASH=False
-
+'''
 # Cache
 CACHE_TTL = 60 # (Tempo de vida do cache)
 CACHES = {
@@ -140,3 +140,4 @@ CACHES = {
         "KEY_PREFIX": "CODE_NATION" # Exemplo de chave para o prefixo do cache
     }    
 }
+'''

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.decorators.cache import cache_page
+# from django.views.decorators.cache import cache_page
 from django.conf import settings
 
 from products.models import Product
@@ -7,7 +7,7 @@ from products.forms import ProductModelForm
 
 # Create your views here.
 
-@cache_page(settings.CACHE_TTL)
+# @cache_page(settings.CACHE_TTL)
 def list_products(request):
     products = Product.objects.all()
 
