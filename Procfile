@@ -1,1 +1,1 @@
-web : gunicorn ecomm.wsgi --max-requests 1200
+web: gunicorn ecomm.wsgi:server --max-requests 1200
