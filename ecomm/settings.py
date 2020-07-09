@@ -127,8 +127,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # APPEND_SLASH=False
-'''
+
 # Cache
+'''
 CACHE_TTL = 60 # (Tempo de vida do cache)
 CACHES = {
     "default": {
