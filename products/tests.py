@@ -7,7 +7,8 @@ class ProductStrTestCase(TestCase):
         product = Product.objects.create(
             name='Teste Produto',
             description='Teste Descrição',
-            price=0.23
+            price=0.23,
+            category_id=1
         )
 
         self.assertEqual(str(product), 'Teste Produto')
