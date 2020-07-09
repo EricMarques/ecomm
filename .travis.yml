@@ -16,8 +16,6 @@ jobs:
       script: /bin/true
       deploy:
         provider: heroku
-        api_key:
-          secure: AAAAB3NzaC1yc2EAAAADAQABAAABAQDJEBdFxTCyPHImSx8sJq1vTIj+ZyGoehbQbwIf/9Una8goLVhwpe64G5FpprL01h8rLh/P9eUH9E6T03ssMlopX2RRyicVcRK3P2m68vnxtVl3rNfdibiLZYL9S/U0IbL9zhRbMosCrGc8E6umlKh05gP0ulwQU6BJcBf8DkVeqVuWtX1EWc/tncZKGcGiqo/DrFfnAJMEg2KJZiXkMbAwNXXdBNyh9LghTbqR2ohdIco2eGlxvJm7PEsWIsy+rSccuqcOH21WVMiqKiShomXB0y9Nu+CNAWjnyOyno3Vh7sld5nnuPnQruo77K/YnHxnibxOFrfc61UHfaX7Dlogl
         app: em-ecomm
         on: master
         run: "python manage.py migrate"
