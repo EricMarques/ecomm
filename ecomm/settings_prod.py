@@ -7,14 +7,13 @@ DATABASES = {
     'default': dj_database_url.config()
 }
 
-STATIC_ROOT = "app-root/repo/wsgi/static"
-
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    ('assets', 'app-root/repo/wsgi/openshift/static'),
-
-    )
+if DEBUG:
+   STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static'),
+   ]
+else:
+   STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MIDDLEWARE.append('whitenoise.middleware.WhiteNoiseMiddleware')
 
